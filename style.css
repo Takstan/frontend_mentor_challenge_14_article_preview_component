@@ -1,0 +1,209 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(210, 46%, 95%);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+}
+
+.article {
+  grid-column: center-start/center-end;
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+@media only screen and (max-width: 24em) {
+  .article {
+    grid-template-columns: 1fr;
+  }
+}
+
+.col-1 {
+  overflow: hidden;
+}
+.col-1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 1% 0;
+     object-position: 1% 0;
+  display: block;
+  transition: all 0.5s;
+}
+.col-1 img:hover {
+  transform: scale(1.2);
+}
+@media only screen and (max-width: 24em) {
+  .col-1 {
+    -o-object-position: 0 0;
+       object-position: 0 0;
+  }
+}
+
+.col-2 {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media only screen and (max-width: 24em) {
+  .col-2 {
+    padding: 3rem;
+  }
+}
+.col-2 h1 {
+  font-size: 3.1rem;
+}
+@media only screen and (max-width: 24em) {
+  .col-2 h1 {
+    font-size: 1.9rem;
+  }
+}
+.col-2__text {
+  font-size: 2rem;
+  line-height: 1.6;
+  color: hsl(212, 23%, 69%);
+}
+@media only screen and (max-width: 24em) {
+  .col-2__text {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    width: 92%;
+    margin-bottom: 1rem;
+  }
+}
+.col-2__profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.7rem;
+}
+.col-2__profile--avatar {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 24em) {
+  .col-2__profile--avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+.col-2__profile--name {
+  font-weight: 800;
+  color: hsl(217, 19%, 35%);
+}
+@media only screen and (max-width: 24em) {
+  .col-2__profile--name {
+    font-size: 1.3rem;
+  }
+}
+.col-2__profile--date {
+  color: hsl(212, 23%, 69%);
+}
+@media only screen and (max-width: 24em) {
+  .col-2__profile--date {
+    font-size: 1.3rem;
+  }
+}
+.col-2 .btn-share {
+  margin-left: auto;
+  width: 4.5rem;
+  height: 4.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 1.1rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+@media only screen and (max-width: 24em) {
+  .col-2 .btn-share {
+    z-index: 200;
+  }
+}
+.col-2 .btn-share__icons {
+  position: absolute;
+  top: -150%;
+  left: -178%;
+  background-color: hsl(217, 19%, 35%);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 1.3rem;
+  width: 20rem;
+  color: hsl(210, 46%, 95%);
+  opacity: 0;
+  display: none;
+}
+@media only screen and (max-width: 24em) {
+  .col-2 .btn-share__icons {
+    top: -2.6px;
+    left: -30.2rem;
+    width: 37.6rem;
+    height: 7.8rem;
+    z-index: 100;
+    border-radius: 1px;
+  }
+}
+.col-2 .btn-share__icons p {
+  font-weight: 100;
+}
+.col-2 .btn-share__icons--img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.col-2 .btn-share__icons::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* position the arrow at the bottom of the box */
+  left: 50%; /* center the arrow horizontally */
+  transform: translateX(-50%); /* adjust for width */
+  border-style: solid;
+  border-width: 1rem 1rem 0 1rem;
+  border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+@media only screen and (max-width: 24em) {
+  .col-2 .btn-share__icons::after {
+    display: none;
+  }
+}
+.col-2 .btn-share__icons.active {
+  display: flex;
+  opacity: 1;
+}
+.col-2 .btn-share.active {
+  /* Add a border when the button is clicked */
+  border: 0.1px solid hsl(217, 19%, 35%);
+}/*# sourceMappingURL=style.css.map */
